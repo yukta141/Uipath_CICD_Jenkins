@@ -25,7 +25,7 @@ pipeline {
                     projectJsonPath: 'project.json',
                     version: [$class: 'ManualVersionEntry', version: "${MAJOR}.${MINOR}.${env.BUILD_NUMBER}"],
                     useOrchestrator: false,
-                    traceLoggingLevel: 'Information'
+                    traceLevel: 'Information'
                 )
             }
         }
@@ -46,7 +46,7 @@ pipeline {
                     ),
                     entryPointPaths: 'Main.xaml',
                     createProcess: true,
-                    traceLoggingLevel: 'Information'
+                    traceLevel: 'Information'
                 )
             }
         }
@@ -68,7 +68,7 @@ pipeline {
                     strategy: Dynamically(jobsCount: 1),
                     waitForJobCompletion: true,
                     timeout: 300,
-                    traceLoggingLevel: 'Information'
+                    traceLevel: 'Information'
                 )
             }
         }
