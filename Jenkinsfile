@@ -64,6 +64,7 @@ pipeline {
                         applicationSecret: "${UIPATH_APP_SECRET}",
                         applicationScope: 'OR.Execution OR.Folders OR.Jobs OR.Settings OR.Settings.Read OR.Settings.Write'
                     ),
+		    jobType: 'Unattended',
                     priority: 'Low',
                     strategy: Dynamically(jobsCount: 1),
                     waitForJobCompletion: true,
