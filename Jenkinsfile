@@ -26,7 +26,7 @@ pipeline {
                     projectJsonPath: 'project.json',  // Main project file
                     version: [$class: 'ManualVersionEntry', version: "${MAJOR}.${MINOR}.${env.BUILD_NUMBER}"],  // Auto-version
                     useOrchestrator: false,  // Local pack
-                    traceLoggingLevel: 'Information'  // For debugging
+                    traceLevel: 'Information'  // For debugging
                 )
             }
         }
@@ -51,7 +51,7 @@ pipeline {
                         ),
                         entryPointPaths: 'Main.xaml',  // Main workflow file
                         createProcess: true,  // Auto-create process in Orchestrator
-                        traceLoggingLevel: 'Verbose'  // Set to Verbose for debugging
+                        traceLevel: 'Verbose'  // Set to Verbose for debugging
                     )
                 }
             }
@@ -82,7 +82,7 @@ pipeline {
                         failWhenJobFails: true,  // Fail pipeline if job fails
                         waitForJobCompletion: true,
                         timeout: 300,  // 5 minutes
-                        traceLoggingLevel: 'Verbose'  // Set to Verbose for debugging
+                        traceLevel: 'Verbose'  // Set to Verbose for debugging
                     )
                 }
             }
